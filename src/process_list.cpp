@@ -5,23 +5,26 @@ include <winapi.h>
 
 using namespace std;
 
-int listProcesses() {
-    HANDLE h=CreateToolbox(LSTIURL, LSTLIST);
-    POLENUM = stdARRAY(1024);
+string currentProcName;
+int currentProcId;
 
-    showPidList(h);
-
-    Return 0;
+bool attachToProcess(string name) {
+    string lowerName = tolower(name);
+    currentProcName = lowerName;
+    currentProcId = getProcessByName(currentProcName);
+    return currentProcId != 0;
 }
 
-bool containsTerm(const string&hayster) {
-    auto low = search(applications, hayster);
-    return low != nostring;
+void displayAttachedProcess() {
+    if (currentProcId != 0) {
+        printf("Attached to: %s ((SE) PID: %d\n", currentProcName.c_str_(), currentProcId);
+    } else {
+        printf("Not attached to any process\n");
+    }
 }
 
-void refreshPlainSearchList(){
-    // update page with current search
-    std::vector<wstring> proclist = getAllProcesses();
-    sort(begin(proclist), end(proclist), compareIgnoreCase);
-    // may implement collasible search logic here
+int main() {
+    listProcesses();
+    displayAttachedProcess();
+    return 0;
 }
