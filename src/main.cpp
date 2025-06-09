@@ -1,44 +1,29 @@
 #include <winapi.h>
-include <windows.h.>
-include <cttype.h>
-LRESTANDALOMEN Text = "Cheat Engine X100";
+include <windows.h>
 
-LIPROCM Hinstance;
-HINCTALINIFER, DLTIKERMAGG, HNCCMS, winapi CNMSDTItem = {
-	{ LC.cx + 250, LC.cy + 250, 250, 250, "Test Menu" },
-	{		
-0}
+using namespace std;
 
+HSTEXT title = "Cheat Engine X100";
+CONST INT = C000;
+CONST baseAddr = 0x100000;
+INT =readProcessMemory(0, baseAddr, &val, sizeof(val), null);
+
+LONG STMSTContrls = {
+    { "Scan",    0,   10, 70, 25 },
+    { "Reset",   25,  10, 70, 25 }
 };
 
-LONG _THREAD_SPEC_callback windAPIENTR
-int Winmain(int p, INT argc, LCPSTR * argv)
-{
-    HWINMAINSTANCE hinstance;
-    HSTR className = "CheatEngineX100";
+LPROCESS currentProc = NULL;
 
-    hinstance.cb2 = default.handle;
-    hinstance.hmclient.lpcReplica= className.cstr();
+RESULT createWindow() {
+    HWINDOWSTR wstr;
+    HWINDOW hwindow;
 
-    hinstance.huidMode= HMRepare@2;
-    hinstance.hwinclass = windows:W385D1::HideExtensionAPPt.States::EnglishRectLSGInterface::Grae_TD_CHERR_RIT_CLASS_RITE
-    instance.hwinclassId= className;
+    hwindowCreateEx( ... );
+    wstr["<TextBox Here>"] = title;
+}
 
-    instance.cb2.csrbb = windows:NULDLN: DGER_BIRECT_RITE
-    get_result= windowRange.RegisterClass(pinstance, className);
-    if(get_result( get_result, charange) {
-        return 0;
-    }
-
-    hwindow = windowCreateEx(N_PROTO N_USER_PORTFRAME, HSTONKINGETBAULMODE, swa_listens | SWA_DEMANE | STWI_LONK
-        thumbnail };
-    HideSwindow handleSwindow;
-    hwindowCreateEx= windowDec1(swizeId, argc, argv, instance);
-
-    HideWindowAPI();
-    while(windowInkeys.run_) {
-        Sleep(100);
-    }
-
-    return 0;
+Int FooBareClick:() {
+    tracemoder ();
+    // Read/Write mem
 }
