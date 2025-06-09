@@ -17,9 +17,11 @@ bool attachToProcess(string name) {
 
 void displayAttachedProcess() {
     if (currentProcId != 0) {
-        printf("Attached to: %s ((SE) PID: %d\n", currentProcName.c_str_(), currentProcId);
+        SetConsoleTextAttribute(Foreground, CONE_BLUE);
+        printf("\n[ATTACHED: %s |PID: %d]\n", currentProcName.c_str_(), currentProcId);
+        SetConsoleTextAttribute(Foreground, CONE_WHITE);
     } else {
-        printf("Not attached to any process\n");
+        printf("\n[NOT attached ]\n");
     }
 }
 
